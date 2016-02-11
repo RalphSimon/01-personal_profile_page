@@ -1,0 +1,42 @@
+$big-stone: map-get($nick-west-muted, big-stone);
+.main-nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: em(60);
+
+  @include media($tablet) {
+    justify-content: space-between;
+  }
+}
+
+.nav {
+  display: none;
+  @include media($tablet) {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & li .nav-item {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      color: $base__white;
+      text-transform: uppercase;
+      font-size: em(16);
+      padding-left: $large__spacing;
+      padding-right: $large__spacing;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid $big-stone;
+      }
+    }
+  }
+}

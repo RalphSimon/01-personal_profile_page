@@ -1,0 +1,38 @@
+.skills {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 49%;
+    height: em(180);
+    text-align: center;
+    font-size: em(14);
+    font-weight: 400;
+    margin-bottom: $medium__spacing;
+    // background-color: fade-out(map-get($jeff-sheldon-muted, shiraz), 0.7);
+
+    @include media($tablet-large) {
+      flex: 0 0 32%;
+      margin-bottom: $base__spacing;
+    }
+  }
+}
+
+.tech-logo {
+  width: 50%;
+}
+
+.tech-logo--small {
+  width: 30%;
+}
+
+.tech-logo--large {
+  width: 75%;
+}

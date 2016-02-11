@@ -1,0 +1,10 @@
+.profile-image {
+  display: block;
+  width: em(80);
+  height: em(80);
+  border-radius: 100%;
+  border: 5px solid $base__white;
+  box-shadow: 0 1px 1px 0px rgba(0,0,0,0.3),
+              0 1px 1px 4px rgba(0,0,0,0.1),
+              0 1px 1px 2px rgba(0,0,0,0.2);
+}

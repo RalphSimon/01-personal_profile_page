@@ -1,6 +1,3 @@
-$yellow: #F0AB1F;
-
-body {
-  font-family: sans-serif;
-  background-color: $yellow;
-}
+@import "base/index";
+@import "components/index";
+@import "layout/index";

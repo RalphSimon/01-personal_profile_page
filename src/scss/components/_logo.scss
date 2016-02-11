@@ -1,0 +1,29 @@
+$big-stone: map-get($nick-west-muted, big-stone);
+
+.logo {
+  display: flex;
+  // justify-content: center;
+  align-items: flex-end;
+
+  width: 60px;
+  height: 60px;
+
+  margin: 0;
+  padding: $base__spacing / 2;
+  color: $base__white;
+  // border-radius: 100%;
+  background-color: $big-stone;
+
+  &:hover {
+    color: $base__white;
+    background-color: lighten($big-stone, 12%);
+  }
+
+  span {
+    display: block;
+    font-size: em(24);
+    font-family: $base__heading;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+}

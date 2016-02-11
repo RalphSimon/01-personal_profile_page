@@ -1,0 +1,20 @@
+@mixin flex($wrap: wrap) {
+  display: flex;
+  width: 100%;
+}
+
+// @mixin flex-direction($direction: row, $reverse: false) {
+//   @include flex;
+//   @if $direction == column {
+//     flex-direction: column;
+//   } @else if $direction == row {
+//     flex-direction: row;
+//   } @else {
+//     flex-direction: column;
+//   }
+// }
+//
+// @mixin row {
+//   @include flex;
+//   flex-direction: row;
+// }

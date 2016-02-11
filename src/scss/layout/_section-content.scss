@@ -1,0 +1,53 @@
+$smalt-blue: map-get($nick-west-muted, smalt-blue);
+$gradient-start: $smalt-blue 40%;
+$gradient-end: transparent;
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: $large__spacing $base__spacing;
+
+  @include media($tablet) {
+    flex-direction: row;
+    min-height: 500px;
+    // justify-content: center;
+  }
+}
+
+.background {
+  background-color: $smalt-blue;
+
+  &, blockquote, .title, .subheading {
+    color: $base__white;
+    border-color: $base__white;
+  }
+
+  @include media($tablet) {
+    padding-left: $large__spacing * 2;
+    background-image:
+      linear-gradient(90deg, $gradient-start, $gradient-end),
+      url("/images/Jonas_Lavoie-Levesque.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.goals {
+  @include media($tablet) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .card--skills {
+    flex: 0 0 49%;
+    align-self: center;
+    // border: $base__border;
+  }
+
+  .card--goals {
+    flex: 0 0 40%;
+    margin-right: $large__spacing;
+    margin-bottom: $large__spacing * 2;
+  }
+}

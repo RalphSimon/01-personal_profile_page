@@ -1,0 +1,55 @@
+// Typography
+$Helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$Georgia: Georgia, Baskerville, "Times New Roman", Times, serif;
+
+
+$base__font-family: "Roboto Condensed", $Helvetica;
+$base__heading: "Playfair Display", "Georgia";
+$subheading: $base__font-family;
+
+$em-base: 16px;
+$base__font-size: $em-base;
+
+$base__line-height: 1.5;
+$base__letter-spacing: 1px;
+$alt__letter-spacing: 2px;
+
+// Colors
+$base__white: #FAFAFA;
+$base__black: rgba(0,0,0,0.87);
+$base__font-color: $base__black;
+$base__secondary: rgba(0,0,0,0.54);
+$base__disabled: rgba(0,0,0,0.38);
+
+$jeff-sheldon-muted: (
+  wafer: #D9C6C1,
+  tabacco-brown: #715D49,
+  mongoose: #C19B79,
+  eastern-blue: #178BA7,
+  shiraz: #A70722,
+);
+
+$nick-west-muted: (
+  green-white: #EFF2EB,
+  summer-green: #A4BFB1,
+  blue-dianne: #215159,
+  smalt-blue: #4F788C,
+  big-stone: #15333F,
+);
+
+// Spacing:
+$mini__spacing: $base__font-size / 4;
+$small__spacing: $base__font-size / 3;
+$medium__spacing: $base__font-size / 2;
+$base__spacing: $base__font-size;
+$large__spacing: $base__spacing * 2;
+
+
+// Border styles:
+$base__border: 1px solid $base__disabled;
+
+// Break-points:
+$tablet: 600px;
+$tablet-large: 769px;
+$desktop: 1024px;
+$desktop-large: 1440px;

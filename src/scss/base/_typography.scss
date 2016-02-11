@@ -1,0 +1,116 @@
+body {
+  font-family: $base__font-family;
+  font-weight: 300;
+  line-height: $base__line-height;
+  // letter-spacing: $base__letter-spacing;
+  color: $base__font-color;
+  background-color: $base__white;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a, {
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1, .display {
+  font-family: $base__heading;
+}
+
+.display {
+  font-size: em(48);
+  font-weight: 900;
+}
+
+h1 {
+  font-size: em(36);
+  font-weight: 700;
+}
+
+h2, .title {
+  font-size: em(24);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: em(16);
+}
+
+h3, .subheading {
+  font-size: em(20);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: em(0.5);
+  padding-bottom: $small__spacing;
+  margin-bottom: $large__spacing;
+  border-bottom: 1px solid $base__secondary;
+}
+
+.menu-item {
+  font-size: em(20);
+  font-weight: 400;
+  letter-spacing: em(0.25);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: $base__font-size;
+  font-weight: 300;
+  margin-bottom: em(12);
+}
+
+blockquote {
+  color: $base__secondary;
+  font-style: italic;
+  margin-left: 0;
+  margin-top: $large__spacing;
+  margin-bottom: $large__spacing;
+  padding-top: $medium__spacing;
+  padding-bottom: $medium__spacing;
+  padding-left: $large__spacing;
+  border-left: 2px solid $base__secondary;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+.caption {
+  position: relative;
+  font-size: em(12);
+  font-weight: 400;
+  color: $base__secondary;
+  padding-top: $base__spacing;
+  margin-top: $large__spacing;
+  // padding-left: $base__spacing;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: $mini__spacing;
+    height: 1px;
+    width: 100%;
+    border-top: 3px solid $base__secondary;
+  }
+}
+
+$eastern-blue: map-get($jeff-sheldon-muted, eastern-blue);
+a {
+  color: $eastern-blue;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($eastern-blue, 12%);
+  }
+}
