@@ -1,4 +1,42 @@
 .main-footer {
   color: $base__white;
   background-color: map-get($nick-west-muted, big-stone);
+  padding: $large__spacing * 2  $large__spacing;
+
+  .title {
+    border-bottom: none;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+
+    li .social {
+      display: flex;
+      flex-dirction: column;
+      justify-content: center;
+      align-items: center;
+      width: em(80);
+      height: em(80);
+      // background-color: $base__white;
+      border-radius: 100%;
+    }
+  }
+
+  .copyright {
+    padding-top: $medium__spacing;
+    border-top: 1px solid $base__white;
+    text-align: center;
+  }
+}
+
+.github-mark {
+  width: em(80);
+  height: em(80);
+
+  .icon {
+    fill: $base__white;
+  }
 }

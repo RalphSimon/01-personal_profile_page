@@ -5,19 +5,19 @@ browserSync = require('browser-sync').create(),
         del = require('del'),
        sass = require('gulp-sass'),
      prefix = require('gulp-autoprefixer'),
-      //  csso = require('gulp-csso'),
-       maps = require('gulp-sourcemaps');
-
+       csso = require('gulp-csso'),
+       maps = require('gulp-sourcemaps'),
+     uglify = require('gulp-uglify'),
+     useref = require('gulp-useref'),
+     gulpif = require('gulp-if');
 // Currently unused tasks. They'll be added when this project evolves.
   //    eslint = require('gulp-eslint'),
-  //    uglify = require('gulp-uglify'),
   //  imagemin = require('gulp-imagemin'),
-  //    useref = require('gulp-useref'),
-  //    gulpIf = require('gulp-if'),
   //      size = require('gulp-size');
 
 var reload = browserSync.reload;
 var paths = {
+  src: 'src/',
   scss: 'src/scss/',
   css: 'src/css/',
   dist: 'dist/',
@@ -43,7 +43,7 @@ gulp.task('compileSass', function() {
     .pipe(browserSync.stream());
 });
 
-// This task launches a static server and watches scss/html files
+// This task launches a static development server and watches scss/html files
 gulp.task('serve', ['compileSass'], function() {
   browserSync.init({
     server: {
@@ -53,6 +53,8 @@ gulp.task('serve', ['compileSass'], function() {
 
   // CSS is auto-injected into the browser with browserSync.stream() in the 'compileSass' task
   gulp.watch("src/scss/**/*.scss", ['compileSass']);
+
+  // Changes in HTML files will automatically reload the page
   gulp.watch("src/*.html").on('change', reload);
 });
 
@@ -60,9 +62,28 @@ gulp.task('serve', ['compileSass'], function() {
 
   DEPLOYMENT
 
+  The following tasks are used to automate a full build workflow, handling concatenation and minification tasks.
+
 ********/
 
-// The following tasks are used to automate a full build workflow, handeling concatenation and minification tasks.
+// 'Clean up' the dist folder
+gulp.task("clean", function () {
+  del(['dist', 'public']);
+});
+
+gulp.task("html", ["compileSass"], function () {
+  return gulp.src(paths.src + '*.html')
+    .pipe(useref())
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(gulpif('*.css', csso()))
+    .pipe(useref())
+    .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task("build", ["clean", "html"], function () {
+  return gulp.src("./src/images/**", { base: 'src' } )
+    .pipe(gulp.dest(paths.dist));
+});
 
 /*********
 
