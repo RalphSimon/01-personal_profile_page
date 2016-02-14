@@ -47,6 +47,7 @@ $large__spacing: $base__spacing * 2;
 
 // Border styles:
 $base__border: 1px solid $base__disabled;
+$base__border--inverted: 1px solid $base__white;
 
 // Break-points:
 $tablet: 600px;

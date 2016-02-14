@@ -1,11 +1,17 @@
 $big-stone: map-get($nick-west-muted, big-stone);
-.main-nav {
+
+.main-nav,
+.nav,
+.nav-item {
   display: flex;
-  justify-content: center;
+}
+
+.main-nav {
   position: fixed;
   top: 0;
   width: 100%;
   height: em(60);
+  background-color: fade_out($big-stone, 0.2);
 
   @include media($tablet) {
     justify-content: space-between;
@@ -13,30 +19,32 @@ $big-stone: map-get($nick-west-muted, big-stone);
 }
 
 .nav {
-  display: none;
+  flex: 1 0 auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+
   @include media($tablet) {
-    display: flex;
-    align-self: stretch;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    padding: 0 $large__spacing 0 0;
+  }
+}
 
-    & li .nav-item {
-      display: flex;
-      align-items: center;
-      height: 60px;
-      color: $base__white;
-      text-transform: uppercase;
-      font-size: em(16);
-      padding-left: $large__spacing;
-      padding-right: $large__spacing;
-      border-bottom: 2px solid transparent;
+.nav-item {
+  position: relative;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 60px;
+  color: $base__white;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: em(22);
+  padding: 0 $base__spacing;
+  margin-left: $large__spacing;
+  border-bottom: 2px solid transparent;
 
-      &:hover {
-        border-bottom: 2px solid $big-stone;
-      }
-    }
+  &:hover, &.active {
+    color: $base__white;
+    border-bottom: 2px solid $base__white;
   }
 }
