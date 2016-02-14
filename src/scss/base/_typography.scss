@@ -43,7 +43,7 @@ h2, .title {
 
 .title {
   text-align: center;
-  margin-bottom: em(16);
+  margin-bottom: $base__spacing;
 }
 
 h3, .subheading {
@@ -112,5 +112,23 @@ a {
 
   &:hover {
     color: darken($eastern-blue, 12%);
+  }
+}
+
+.light-on-dark {
+  color: $base__white;
+
+  a {
+    color: $base__secondary;
+    font-weight: 700;
+    text-decoration: underline;
+
+    &:hover {
+      color: $base__disabled;
+    }
+  }
+
+  &, >::before {
+    border-color: $base__white;
   }
 }
