@@ -1,7 +1,10 @@
 .main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: $base__white;
   background-color: map-get($nick-west-muted, big-stone);
-  padding: $large__spacing * 2  $large__spacing;
+  padding: $large__spacing * 2  $large__spacing $base__spacing;
 
   .title {
     border-bottom: none;
@@ -26,6 +29,7 @@
   }
 
   .copyright {
+    font-size: em(12);
     padding-top: $medium__spacing;
     border-top: 1px solid $base__white;
     text-align: center;
@@ -35,8 +39,4 @@
 .github-mark {
   width: em(80);
   height: em(80);
-
-  .icon {
-    fill: $base__white;
-  }
 }

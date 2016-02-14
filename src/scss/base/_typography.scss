@@ -30,6 +30,8 @@ h1, .display {
 .display {
   font-size: em(48);
   font-weight: 900;
+  line-height: 1;
+  margin-bottom: $large__spacing;
 }
 
 h1 {
