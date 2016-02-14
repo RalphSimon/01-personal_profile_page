@@ -1,19 +1,19 @@
+$modifiers: background goals skills;
+
 .card {
   width: 100%;
 
   @include media($tablet) {
     width: 50%;
-    margin: 0 auto;
   }
 }
 
-.card--skills {
-  flex: 0 0 49%;
-  align-self: center;
-}
+@each $modifier in $modifiers {
+  @include media($tablet) {
+    .card,
+    .card--#{$modifier}{
+      flex: 0 0 48%;
 
-.card--goals {
-  flex: 0 0 40%;
-  margin-right: $large__spacing;
-  margin-bottom: $large__spacing * 2;
+    }
+  }
 }

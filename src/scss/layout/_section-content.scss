@@ -2,15 +2,17 @@ $smalt-blue: map-get($nick-west-muted, smalt-blue);
 $gradient-start: $smalt-blue 40%;
 $gradient-end: transparent;
 
+// display: flex
+
+
 .section-content {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   width: 100%;
   padding: $large__spacing $base__spacing;
 
   h1 {
-    flex: 1 0 auto;
     text-align: center;
     margin-bottom: $large__spacing;
   }
@@ -19,7 +21,6 @@ $gradient-end: transparent;
     flex-direction: row;
     padding-left: $large__spacing * 2;
     padding-right: $large__spacing * 2;
-    min-height: 500px;
   }
 }
 
@@ -51,26 +52,42 @@ $gradient-end: transparent;
   }
 }
 
-.christopher-speaking {
-  flex-direction: column;
+/*****
+/ !!!!!
+/ Safari seems to display some weird behaviour when it comes to 'flex-direction: column'.
+/ It doesn't resepect the 'min-height' declaration. Instead, Safari applies it as a regular 'height'
+/ property.
+/ !!!!!
+*****/
+
+.jim-speaking, .picksum {
+  flex-direction: row;
   justify-content: center;
+
 }
 
 .picksum {
-  flex-direction: column;
   background-color: rgb(204, 72, 57);
+  justify-content: center;
+}
 
-  .picksum-logo {
-    width: 100%;
-    padding: $large__spacing;
-    margin: 0 auto;
+.picksum-logo {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 120px;
+  text-align: center;
+  vertical-align: middle;
+  // padding: $large__spacing;
 
-    img {
-      width: 100%;
-    }
-
-    @include media($tablet) {
-      width: 50%;
-    }
+  img {
+    width: 50%;
   }
+
+  // @include media($tablet) {
+  //   width: 50%;
+  //   margin: 0 auto;
+  // }
 }

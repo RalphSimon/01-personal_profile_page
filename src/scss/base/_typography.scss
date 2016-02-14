@@ -128,7 +128,7 @@ a {
     }
   }
 
-  &, >::before {
+  &, .caption::before {
     border-color: $base__white;
   }
 }
