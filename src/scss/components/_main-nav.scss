@@ -8,6 +8,7 @@ $big-stone: map-get($nick-west-muted, big-stone);
 
 .main-nav {
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
   height: em(60);

@@ -132,3 +132,31 @@ a {
     border-color: $base__white;
   }
 }
+
+.credits {
+  position: absolute;
+  right: 25%;
+  bottom: 5px;
+  font-size: em(10);
+  padding: $small__spacing;
+  border-radius: 2px;
+  color: $base__white;
+  background-color: rgba(0,0,0,0.3);
+
+  &:hover {
+    background-color: rgba(0,0,0,0.2);
+    color: darken($base__white, 20%);
+  }
+
+  @include media($tablet) {
+    right: 5px;
+  }
+}
+
+.section-content > .credits {
+  display: none;
+
+  @include media($tablet) {
+    display: block;
+  }
+}

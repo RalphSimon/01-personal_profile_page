@@ -5,6 +5,7 @@ $gradient-start: fade-out($eastern-blue, 0.3);
 $gradient-end: fade-out($wafer, 0.1);
 
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
